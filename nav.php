@@ -32,7 +32,7 @@
         echo "<a class='nav-link' href='home.php'>Home</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
-        echo "<a class='nav-link' href='*'>Create User</a>";
+        echo "<a class='nav-link' href='create_user.php'>Create User</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
         echo "<a class='nav-link' href='*'>Create Quiz</a>";
