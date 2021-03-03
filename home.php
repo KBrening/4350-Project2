@@ -1,3 +1,14 @@
+<?php
+//Writen By: Keelan Brening
+//File: home.php
+//
+//Purpose:
+//  The purpose of this page is to be the landing page of the website. It is also going to
+//      handle all the redirection in the website back to home.php. Since this site is using
+//      $_SESSION, every website will look different for each user since they each can only
+//      view certain sites.
+?>
+
 <html>
     <head>
         <title>Quiz Taker</title>
@@ -7,6 +18,9 @@
         <?php session_start(); ?>
         <?php include('nav.php');?>
 <?php
+
+//This handles the landing page for everyone, User, Admin and Guest.
+
 if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
     $user = $_SESSION['fname'];
     echo "<br><br><h1> Welcome $user to Quiz-Taker</h1><br><br>";
