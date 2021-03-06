@@ -35,7 +35,7 @@
         echo "<a class='nav-link' href='create_user.php'>Create User</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
-        echo "<a class='nav-link' href='*'>Create Quiz</a>";
+        echo "<a class='nav-link' href='tquiz.php'>Create Quiz</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
         echo "<a class='nav-link' href='*'>View all Scores</a>";
