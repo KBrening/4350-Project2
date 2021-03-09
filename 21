@@ -91,13 +91,16 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
             }
             echo "<script>alert('$qid')</script>";
 
+            $insert2[$count] = 0;
             //Insert Question into database
             for($i = 0; $i < $count; $i++) {
-                $insert2 = "INSERT INTO Questions (T_id, Quiz_id, Q_Question, Q_mult1, Q_mult2, Q_mult3, 
+                $insert2[$count] = "INSERT INTO Questions (T_id, Quiz_id, Q_Question, Q_mult1, Q_mult2, Q_mult3, 
                 Q_mult4, Q_answer) VALUES ('{$tid}', '{$qid}', '{$question[$i]}', '{$mult1[$i]}', '{$mult2[$i]}',
                 '{$mult3[$i]}', '{$mult4[$i]}', '{$answer[$i]}');";
-                
-                if($db->query($insert2) === TRUE) {
+            }
+
+            for($i = 0; $i < $count; $i++){
+                if($db->query($insert2[$i]) === TRUE) {
                     //Means that the Query was completed correctly
                 } else {
                     exit("ERROR: Insert failed on Questions");
@@ -107,6 +110,15 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                   window.location='home.php';</script>";
        
         }
+        /*echo "<h1>$quizname</h1>";
+        for($i=0; $i < $count; $i++) {
+            echo "<h4>{$question[$i]}</h4><br>";
+            echo "<h4>{$mult1[$i]}</h4><br>";
+            echo "<h4>{$mult2[$i]}</h4><br>";
+            echo "<h4>{$mult3[$i]}</h4><br>";
+            echo "<h4>{$mult4[$i]}</h4><br>";
+            echo "<h4>{$answer[$i]}</h4><br>";
+        }*/
     } else {
   
 ?>

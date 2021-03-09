@@ -13,7 +13,7 @@
         echo "<a class='nav-link' href='home.php'>Home</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
-        echo "<a class='nav-link' href='*'>Take Quiz</a>";
+        echo "<a class='nav-link' href='take_quiz.php'>Take Quiz</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
         echo "<a class='nav-link' href='*'>Scores</a>";
