@@ -89,15 +89,18 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
             if($qid == 5000){
                 exit("ERROR: Quiz id not found or create");
             }
-            echo "<script>alert('$qid')</script>";
+            //echo "<script>alert('$count')</script>";
 
             //Insert Question into database
             for($i = 0; $i < $count; $i++) {
-                $insert2 = "INSERT INTO Questions (T_id, Quiz_id, Q_Question, Q_mult1, Q_mult2, Q_mult3, 
-                Q_mult4, Q_answer) VALUES ('{$tid}', '{$qid}', '{$question[$i]}', '{$mult1[$i]}', '{$mult2[$i]}',
-                '{$mult3[$i]}', '{$mult4[$i]}', '{$answer[$i]}');";
+                //echo "INSERT INTO Questions (T_id, Quiz_id, Q_Question, Q_mult1, Q_mult2, Q_mult3,
+                 //Q_mult4, Q_answer) VALUES ('$tid', '$qid', '{$question[$i]}', '{$mult1[$i]}', '{$mult2[$i]}',
+                //'{$mult3[$i]}', '{$mult4[$i]}', '{$answer[$i]}')\n";
+                $insert = "INSERT INTO Questions (T_id, Quiz_id, Q_Question, Q_mult1, Q_mult2, Q_mult3,
+                 Q_mult4, Q_answer) VALUES ('$tid', '$qid', '{$question[$i]}', '{$mult1[$i]}', '{$mult2[$i]}',
+                '{$mult3[$i]}', '{$mult4[$i]}', '{$answer[$i]}')";
                 
-                if($db->query($insert2) === TRUE) {
+                if($db->query($insert) === TRUE) {
                     //Means that the Query was completed correctly
                 } else {
                     exit("ERROR: Insert failed on Questions");
@@ -162,13 +165,13 @@ $(document).on('click', '.addService', function() {
     var html = "<div class='child'><label for='question'>Question</label><br>" +
         "<input type='text' name='question["+counter+"]'><br>" +
         "<label>Answers for Question</label><br>" +            
-        "<input type='radio' name='answer["+counter+"]'>" +
+        "<input type='radio' value='1' name='answer["+counter+"]'>" +
         "<input type='text' name='mult1["+counter+"]'><br>" +
-        "<input type='radio' name='answer["+counter+"]'>" +
+        "<input type='radio' value='2' name='answer["+counter+"]'>" +
         "<input type='text' name='mult2["+counter+"]'><br>" +
-        "<input type='radio' name='answer["+counter+"]'>" +
+        "<input type='radio' value='3' name='answer["+counter+"]'>" +
         "<input type='text' name='mult3["+counter+"]'><br>" +
-        "<input type='radio' name='answer["+counter+"]'>" +
+        "<input type='radio' value='4' name='answer["+counter+"]'>" +
         "<input type='text' name='mult4["+counter+"]'><br></div>";
     //$(this).parent().prepend(html);
     $('.parent').append(html);
