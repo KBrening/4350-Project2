@@ -157,8 +157,8 @@ var counter = 1;
 
 $(document).on('click', '.addService', function() {
 
-    if(counter > 9) {
-        alert("Max 10 question");
+    if(counter > 24) {
+        alert("Max 25 question");
         return false;
     }
 

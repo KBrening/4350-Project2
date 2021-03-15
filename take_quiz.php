@@ -27,7 +27,8 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
         $quizid = $_POST['quizid'];
         $answer = $_POST['answer'];
         $correct = 0;
-
+        $questions = 0;
+        $score = 0;
         for($i = 0; $i < count($answer); $i++){
             $answer[$i] = htmlentities(strip_tags($answer[$i]), ENT_QUOTES);
             if(empty($answer[$i])) {
@@ -47,9 +48,12 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                     if($answer[$j] == $ans){
                         $correct++;
                     }
+                    $questions++;
                     $j++;
                 }
-                echo "<h4>Score: $correct</h4><br>";
+                $score = $correct/$questions;
+                $score = round((float)$score * 100);
+                echo "<h4>Grade: $score%</h4><br>";
                 echo "<br>";
             }
         }
@@ -59,7 +63,7 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
         } else {
             //Insert the score into Score table
             $insert = "INSERT INTO Scores (C_id, Quiz_id, S_score) 
-                VALUES ('{$_SESSION['cid']}', $quizid, $correct);";
+                VALUES ('{$_SESSION['cid']}', $quizid, $score);";
             
             if($db->query($insert)) {
                 echo "<script>alert('Score Saved');</script>";

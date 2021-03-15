@@ -9,6 +9,7 @@
 <html>
     <head>
         <title>Login</title>
+        <link rel="stylesheet" href="home.css"> 
     </head>
     <body>
 <?php session_start(); ?>

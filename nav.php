@@ -16,7 +16,7 @@
         echo "<a class='nav-link' href='take_quiz.php'>Take Quiz</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
-        echo "<a class='nav-link' href='*'>Scores</a>";
+        echo "<a class='nav-link' href='scores.php'>Scores</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
         echo "<a class='nav-link' href='logout.php'>Logout</a>";
@@ -38,7 +38,7 @@
         echo "<a class='nav-link' href='tquiz.php'>Create Quiz</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
-        echo "<a class='nav-link' href='*'>View all Scores</a>";
+        echo "<a class='nav-link' href='scores.php'>View all Scores</a>";
         echo "</li>";
         echo "<li class='nav-item active'>";
         echo "<a class='nav-link' href='logout.php'>Logout</a>";
