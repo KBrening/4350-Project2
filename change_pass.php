@@ -12,6 +12,7 @@
 <html>
     <head>
         <title>Change Password</title>
+        <link rel="stylesheet" href="home.css">
     </head>
     <body>
 <?php

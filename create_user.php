@@ -11,6 +11,7 @@
 <html>
     <head>
         <title>Create User</title>
+        <link rel="stylesheet" href="home.css"> 
     </head>
     <body>
 <?php 

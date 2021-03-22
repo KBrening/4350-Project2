@@ -106,7 +106,7 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                     exit("ERROR: Insert failed on Questions");
                 }
             }
-            echo "<script>alert('Quiz Inserted Correctly');
+            echo "<script>alert('Quiz Created Correctly');
                   window.location='home.php';</script>";
        
         }

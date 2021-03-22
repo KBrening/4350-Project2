@@ -90,6 +90,7 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
         }
 
         $i = 0;
+        $j = 1;
         if($db->connect_error) {
             exit("Bad Connection");
         } else {
@@ -102,20 +103,21 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                 echo "<form action='take_quiz.php' method='post'>";
                 while($stmt->fetch()){
                     if($quiz_id == $qid) {
-                        echo "<br><label>$question</label><br>";
+                        echo "<br><label>$j) $question</label><br>";
                         echo "<input type='radio' value=1 name='answer[{$i}]'>";
-                        echo "<label>$mult1</label><br>";
+                        echo "<label>&nbsp$mult1</label><br>";
                         echo "<input type='radio' value=2 name='answer[{$i}]'>";
-                        echo "<label>$mult2</label><br>";
+                        echo "<label>&nbsp$mult2</label><br>";
                         echo "<input type='radio' value=3 name='answer[{$i}]'>";
-                        echo "<label>$mult3</label><br>";
+                        echo "<label>&nbsp$mult3</label><br>";
                         echo "<input type='radio' value=4 name='answer[{$i}]'>";
-                        echo "<label>$mult4</label><br>";
+                        echo "<label>&nbsp$mult4</label><br>";
                         $i++;
+                        $j++;
                     }   
                 }
                 echo "<input type='hidden' value='{$quiz_id}' name='quizid'>";
-                echo "<input type='submit' value='submit'>";
+                echo "<input type='submit' value='Submit'>";
                 echo "</form>";
             }
             
@@ -139,7 +141,7 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                         echo "<label>&nbsp;$q_name &nbsp&nbsp Date Create: $q_date </label><br>";
                     }   
                 }
-                echo "<input type='submit' value='submit'>";
+                echo "<input type='submit' value='Submit'>";
                 echo "</form>";
             }
         }

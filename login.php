@@ -82,7 +82,8 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                             header("Location: home.php");
                         }
                     } else {
-                        header("Location: login.php");
+                        echo "<script>alert('User Not Found');
+                               window.location='login.php';</script>";
                     }
 
                 }
@@ -104,7 +105,8 @@ if(isset($_SESSION['userlogged']) && $_SESSION['userlogged'] == true) {
                         $_SESSION['tid'] = $row['T_id'];
                         header("Location: home.php");
                     } else {
-                        header("Location: login.php");
+                        echo "<script>alert('Teacher Not Found');
+                               window.location='login.php';</script>";
                     }
 
                 }

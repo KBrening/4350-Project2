@@ -27,7 +27,7 @@ h1 {
     text-align:center;
 }
 
-table, tr, th{
+table, tr, th, td{
     border:1px solid black;
     margin-left: auto;
     margin-right:auto; 
@@ -37,4 +37,9 @@ form {
    margin: auto;
   display:table 
 }
+
+p {
+    text-align:center;
+}
+
 
